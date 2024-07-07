@@ -22,8 +22,6 @@ public class BrokersStepDefinition {
         getDriver().get(baseUrl);
         assertTrue(brokersPage.isDisplayed());
         brokerNames = brokersPage.getBrokerNames();
-        System.out.println(brokerNames);
-        System.out.println(brokerNames.size());
     }
 
     @When("I search for brokers")
