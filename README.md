@@ -6,10 +6,10 @@ This project is made as an assessment for Kin + Carta company
 
 - [Installation](#installation)
 - [Prerequisites](#prerequisites)
-- [IDE Setup (Optional)](#IDE Setup (Optional))
-- [Clone the Repository](#Clone the Repository)
-- [Build the Project](#Build the Project)
-- [Running tests with cucumber](#Build the Project)
+- [IDE Setup (Optional)](#ide-setup-optional)
+- [Clone the Repository](#clone-the-repository)
+- [Build the Project](#build-the-project)
+- [Running tests with cucumber](#running-tests-with-cucumber)
 
 ## Installation
 
@@ -48,4 +48,5 @@ Build and run the project using IDE tools and features.
 
 
 ### Running tests with Cucumber
+
 Additionally you can run tests using **CucumberTestSuite.java** which is located in this path src/test/java/runners
