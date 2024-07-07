@@ -6,8 +6,10 @@ This project is made as an assessment for Kin + Carta company
 
 - [Installation](#installation)
 - [Prerequisites](#prerequisites)
+- [IDE Setup (Optional)](#IDE Setup (Optional))
 - [Clone the Repository](#Clone the Repository)
 - [Build the Project](#Build the Project)
+- [Running tests with cucumber](#Build the Project)
 
 ## Installation
 
@@ -17,7 +19,11 @@ To get started with the project, follow these steps:
 
 - Java Development Kit (JDK) 8 or higher installed and configured.
 - Maven installed on your machine. You can download it from [Maven official website](https://maven.apache.org/download.cgi) and follow [installation instructions](https://maven.apache.org/install.html).
+### IDE Setup (Optional)
+If you prefer to use an Integrated Development Environment (IDE) such as IntelliJ IDEA:
 
+Import the project as a Maven project.
+Build and run the project using IDE tools and features.
 ### Clone the Repository
 
 1. Clone the repository using Git:
@@ -40,4 +46,6 @@ To get started with the project, follow these steps:
 
 2. Verify that the build is successful and all tests pass
 
-   
+
+### Running tests with Cucumber
+Additionally you can run tests using **CucumberTestSuite.java** which is located in this path src/test/java/runners

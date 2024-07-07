@@ -39,7 +39,15 @@ public class BasePage extends PageObject {
     }
 
     protected List<WebElement> waitForElementsToBeVisible(List<WebElement> elements) {
-        return wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+        int attempts = 0;
+        while (attempts < 2) {
+            try {
+                return wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+            } catch (StaleElementReferenceException e) {
+                attempts++;
+            }
+        }
+        throw new RuntimeException("Elements are not stable after 2 attempts");
     }
 
     protected WebElement waitForElementToBeClickable(WebElement element) {

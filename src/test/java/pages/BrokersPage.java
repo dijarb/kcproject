@@ -45,7 +45,7 @@ public class BrokersPage extends BasePage {
 
         while (currentSize > previousSize) {
             previousSize = currentSize;
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 8; i++) {
                 ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, arguments[0]);", scrollAmount);
                 waitABit(500);
             }
@@ -71,7 +71,11 @@ public class BrokersPage extends BasePage {
             List<WebElement> elements = driver.findElements(By.cssSelector("div.MuiGrid-item"));
             return elements.size() > 1;
         });
-        waitForElementToBeVisible(searchBar).sendKeys(brokerName + Keys.ENTER);
+        try {
+            waitForElementToBeVisible(searchBar).sendKeys(brokerName + Keys.ENTER);
+        }catch (StaleElementReferenceException e){
+            waitForElementToBeVisible(driver.findElement(By.id("broker-keyword"))).sendKeys(brokerName + Keys.ENTER);
+        }
         wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("div.MuiGrid-item"), 1));
         List<WebElement> displayedBrokers = driver.findElements(By.cssSelector("div.MuiGrid-item"));
         assertEquals("More than one broker displayed", 1, displayedBrokers.size());
